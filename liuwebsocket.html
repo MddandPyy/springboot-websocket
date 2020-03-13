@@ -24,14 +24,6 @@
 
     <script type="text/javascript">
         var websocket = null;
-        function setMessageInnerHTML(innerHTML) {
-            document.getElementById('message').innerHTML += innerHTML + '<br/>';
-        }
-    
-        function closeWebSocket(){
-            //alert("下线成功");
-            websocket.close();
-        }
         
         //登录链接
         function login() {
@@ -63,6 +55,15 @@
         function send() {
             var message = document.getElementById('text').value;
             websocket.send(message);
+        }
+
+        function closeWebSocket(){
+            //alert("下线成功");
+            websocket.close();
+        }
+
+        function setMessageInnerHTML(innerHTML) {
+            document.getElementById('message').innerHTML += innerHTML + '<br/>';
         }
     </script> 
 </html>
