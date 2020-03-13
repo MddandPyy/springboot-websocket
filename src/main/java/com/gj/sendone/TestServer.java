@@ -12,8 +12,12 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author Gjing
- **/
+ * 群发最终版
+ * @param
+ * @return
+ * @date 2020/3/13
+ * @ahthor lzp
+ */
 @ServerEndpoint("/testroom")
 @Component
 @Slf4j
@@ -42,6 +46,10 @@ public class TestServer {
         String sessionId = session.getId();
         log.info("有客户端离线: {}", sessionId);
         clients.remove(sessionId);
+        Map<String, List<String>>  requestParameterMap = session.getRequestParameterMap();
+        List<String> list = requestParameterMap.get("username");
+        String username = list.get(0); // 当前用户名*/
+        sendAll(username+":下线了");
     }
 
     @OnError

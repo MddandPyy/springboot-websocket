@@ -11,8 +11,12 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author Gjing
- **/
+ * 单对单
+ * @param
+ * @return
+ * @date 2020/3/13
+ * @ahthor lzp
+ */
 @ServerEndpoint("/test-one")
 @Component
 @Slf4j
